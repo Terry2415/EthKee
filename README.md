@@ -1,4 +1,4 @@
-# Free cross-platform password manager compatible with KeePass
+# Free cross-platform password manager compatible with KeePass and Ethereum
 
 This webapp is a browser and desktop password manager compatible with KeePass databases. It doesn't require any server or additional resources.
 The app can run either in browser, or as a desktop app.
