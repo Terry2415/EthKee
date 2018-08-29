@@ -25,7 +25,7 @@ You can download the latest distribution files from [gh-pages](https://github.co
 
 If you are using Docker:
 
-1. put your dh.pem, cert.pem, key.pem to /etc/nginx/external/ 
+1. put your dh.pem, cert.pem, key.pem to /etc/nginx/external/
 2. run this script:
 ```bash
 docker run --name keeweb -d -p 443:443 -p 80:80 -v $EXT_DIR:/etc/nginx/external/ antelle/keeweb
@@ -35,14 +35,10 @@ To make Dropbox work in your self-hosted app, [go to this Wiki page](https://git
 
 # Building
 
-The easiest way to clone all KeeWeb repos is:
-```bash
-curl https://raw.githubusercontent.com/keeweb/keeweb/develop/dev-env.sh | bash -
-```
-
 The app can be built with grunt: `grunt` (html file will be in `dist/`).    
 Desktop apps are built with `grunt desktop`. This works only in macOS as it builds dmg; requires wine.  
 Also, a hardware token is required.  
+
 To run Electron app without building an installer, build the app with `grunt` and start it this way:
 ```bash
 grunt dev
@@ -51,30 +47,7 @@ npm run-script electron
 
 For debug build:
 
-1. run `grunt dev`
-2. open `http://localhost:8085/tmp`
-
-# Contributing
-
-Please read contribution guidelines: [for issues](.github/ISSUE_TEMPLATE.md) and [for pull requests](.github/PULL_REQUEST_TEMPLATE.md).  
-For pull requests: branch is important! `master` is only for hotfixes, `develop` is for new features.  
-Here's a [list of issues](https://github.com/keeweb/keeweb/labels/help%20wanted) which need help.
-Also you can help by [translating KeeWeb](https://keeweb.oneskyapp.com) to your language.  
-
-### Important notes for pull requests
-
-- please branch from `develop`, not `master`
-- don't edit translation files except base.json, they will be replaced
-
-# Donations
-
-KeeWeb is not free to develop. It takes time, requires paid code signing certificates and domains.  
-You can help the project or say "thank you" with this button:  
-[<img src="img/paypal-donate.png" alt="Donate with PayPal" width="100">](https://www.paypal.me/dvitkovsky)  
-
-Please note: donation does not imply any type of service contract.  
-
-
-# License
-
-[MIT](https://github.com/keeweb/keeweb/blob/master/LICENSE)
+1. run `npm install`
+2. run `grunt dev --skip-sign --force`
+3. open `http://localhost:8085/tmp`
+Make sure your metamask and ganache is running
